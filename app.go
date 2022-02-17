@@ -11,8 +11,9 @@ func Register() error {
 }
 
 func Router() error {
-	http.Get("/test", func(request *http.Context) {
+	http.Get("/test", func(request *http.Context) error {
 		request.Write("Test Message")
+		return nil
 	})
 
 	return nil
